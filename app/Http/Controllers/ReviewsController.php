@@ -56,6 +56,7 @@ class ReviewsController extends Controller
        ;
 
         $product = Product::all();
+
         return redirect()->back();
     }
 

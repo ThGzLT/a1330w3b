@@ -30,7 +30,7 @@ class ProductController extends Controller
     {
         $produktai = Product::all();
         $kintamieji = Kintamieji::all();
-        return view('home', compact('produktai', 'kintamieji'));
+        return view('welcome', compact('produktai', 'kintamieji'));
     }
 
     public function index()
@@ -38,7 +38,7 @@ class ProductController extends Controller
 
         $produktai = Product::all();
          $kintamieji = Kintamieji::all();
-        return view('home1', compact('produktai', 'kintamieji'));
+        return view('home', compact('produktai', 'kintamieji'));
     }
 
     public function create()
@@ -85,7 +85,7 @@ class ProductController extends Controller
              'cover_image' => $fileNameToStore,
         ]);
         $NaujasProduktas->save();
-        return redirect('/home1')->with('success', 'Stock has been updated');
+        return redirect('/home')->with('success', 'Stock has been updated');
     }
 
     /**
@@ -153,7 +153,7 @@ class ProductController extends Controller
         }
         $produktas->save();
 
-        return redirect('/home1')->with('success', 'Stock has been updated');
+        return redirect('/home')->with('success', 'Stock has been updated');
 
     }
 
@@ -169,7 +169,7 @@ class ProductController extends Controller
         $produktas = Product::find($id);
         unlink(storage_path('app/public/cover_images/'.$produktas->cover_image));
         $produktas->delete();
-        return redirect('/home1')->with('success', 'Product Removed');
+        return redirect('/home')->with('success', 'Product Removed');
     }
 
     public function deleteAll(Request $request)
