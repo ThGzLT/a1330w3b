@@ -17,11 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home1', 'HomeController@index')->name('home');
 
 
-Route::get('home', 'ProductController@index')->name('produktas', 'kintamieji');
-Route::get('/', 'ProductController@frontend')->name('produktas', 'kintamieji');
+Route::get('home1', 'ProductController@index')->name('produktas', 'kintamieji');
+Route::get('/home', 'ProductController@frontend')->name('produktas', 'kintamieji');
 // Route::get('/', 'ProductController@show')->name('produktas', 'kintamieji');
 
 Route::post('/reviews/{product_id}', ['uses' => 'ReviewsController@store', 'as' => 'reviews.store']);  // Reviews

@@ -26,6 +26,6 @@ class HomeController extends Controller
     {
         $produktai = Product::all();
 
-        return view('home', compact('produktai'));
+        return view('home1', compact('produktai'));
     }
 }

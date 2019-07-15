@@ -27,7 +27,7 @@ class KintamiejiController extends Controller
     {
 
         $kintamieji = Kintamieji::all();
-        return view('home', compact( 'kintamieji'));
+        return view('home1', compact( 'kintamieji'));
     }
 
     public function create()
@@ -88,7 +88,7 @@ class KintamiejiController extends Controller
         $kintamieji->globalnuolaidostagas = $request->get('globalnuolaidostagas');
         $kintamieji->save();
 
-        return redirect('/home')->with('success', 'Stock has been updated');
+        return redirect('/home1')->with('success', 'Stock has been updated');
 
     }
 
